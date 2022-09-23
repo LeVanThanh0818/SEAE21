@@ -10,7 +10,7 @@ def main():
     limits = parse_limits()
     sensor_data = []
 
-    if len(limits) > 0 and check_limits(limits) and check_limits_max_min(limits):
+    if len(limits) > 0 and check_limits(limits) and check_limits_2_iterms(limits):
         sensor_data = read_sensors()
         # This is a mockup code that prints the sensor readings
         # to console. To be replaced with actual implementation

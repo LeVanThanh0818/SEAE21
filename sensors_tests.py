@@ -1,3 +1,5 @@
+# try to check commit 2022.09.23
+
 import sensors_main
 import unittest
 
@@ -23,6 +25,11 @@ class TestSensors(unittest.TestCase):
         limits = [22, 18]
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, False)
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> b9b531994565224ee4cc998e832a77e64ee852a9
     # Placeholder for the test case test_check_limits3. To be designed
     # and implemented.
 

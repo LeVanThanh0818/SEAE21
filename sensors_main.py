@@ -1,5 +1,4 @@
-# Try to update new information
-
+# Try to update new information 2022.09.23
 import sys
 
 # This is the main function for controlling the flow of the

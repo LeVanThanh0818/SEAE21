@@ -37,5 +37,29 @@ class TestSensors(unittest.TestCase):
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, False) 
 
+    # Placeholder for the test case test_check_limits_2_iterm1. 
+    # To be designed and implemented.
+    # The test case test_check_limits_2_iterm1 that tests 
+    # the test_check_limits_2_iterm1
+    # with incorrect inputs (1 iterm in limits) and
+    # expects the method to return False, since the limits are
+    # incorrect. To be implemented.
+    def test_check_limits_2_iterm1(self):
+        limits = [10]
+        result = sensors_main.check_limits_2_iterm(limits)
+        self.assertTrue(result, False) 
+
+    # Placeholder for the test case test_check_limits_2_iterm2. 
+    # To be designed and implemented.
+    # The test case test_check_limits_2_iterm1 that tests 
+    # the test_check_limits_2_iterm1
+    # with incorrect inputs (1 iterm in limits) and
+    # expects the method to return False, since the limits are
+    # incorrect. To be implemented.
+    def test_check_limits_2_iterm2(self):
+        limits = [2,10]
+        result = sensors_main.check_limits_2_iterm(limits)
+        self.assertTrue(result, True) 
+
 if __name__ == '__main__':
     unittest.main()

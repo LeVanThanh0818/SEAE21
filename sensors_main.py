@@ -1,4 +1,5 @@
 # Try to update new information 2022.09.23
+from asyncio.constants import LOG_THRESHOLD_FOR_CONNLOST_WRITES
 import sys
 
 # This is the main function for controlling the flow of the
@@ -9,7 +10,7 @@ def main():
     limits = parse_limits()
     sensor_data = []
 
-    if len(limits) > 0 and check_limits(limits):
+    if len(limits) > 0 and check_limits(limits) and check_limits_max_min(limits):
         sensor_data = read_sensors()
         # This is a mockup code that prints the sensor readings
         # to console. To be replaced with actual implementation
@@ -41,6 +42,16 @@ def parse_limits():
 # True. Otherwise, it returns False.
 def check_limits(limits):
     if limits[0] < limits[1]:
+        return True
+    else:
+        return False
+
+# This is the check_limits function that gets an array containing the
+# limits as a parameter and checks that in limits have 2 iterm (min, max). 
+# If this is the case, the function returns
+# True. Otherwise, it returns False.
+def check_limits_2_iterm(limits):
+    if len(limits)==2:
         return True
     else:
         return False

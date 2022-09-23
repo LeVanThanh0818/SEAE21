@@ -25,14 +25,9 @@ class TestSensors(unittest.TestCase):
         limits = [22, 18]
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, False)
-<<<<<<< HEAD
-=======
-    
-
->>>>>>> b9b531994565224ee4cc998e832a77e64ee852a9
+        
     # Placeholder for the test case test_check_limits3. To be designed
     # and implemented.
-
     # The test case test_check_limits3 that tests the check_limits
     # with incorrect inputs (lower limit 10 and higher limit 10) and
     # expects the method to return False, since the limits are

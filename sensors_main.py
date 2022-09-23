@@ -2,6 +2,8 @@ import sys
 
 # This is the main function for controlling the flow of the
 # implementation.
+# check commit by laptop 2022.09.23
+
 def main():
     limits = parse_limits()
     sensor_data = []

@@ -50,7 +50,7 @@ def check_limits(limits):
 # limits as a parameter and checks that in limits have 2 iterm (min, max). 
 # If this is the case, the function returns
 # True. Otherwise, it returns False.
-def check_limits_2_iterm(limits):
+def check_limits_2_iterms(limits):
     if len(limits)==2:
         return True
     else:

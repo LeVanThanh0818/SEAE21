@@ -62,7 +62,7 @@ class TestSensors(unittest.TestCase):
         limits = [2,10]
         result = sensors_main.check_limits_2_iterms(limits)
         self.assertTrue(result, True) 
-        
+
     #######################################
     # Example of an integration test case #
     #######################################

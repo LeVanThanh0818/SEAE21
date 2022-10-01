@@ -39,6 +39,38 @@ class TestSensors(unittest.TestCase):
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, False) 
 
+
+    ##### for Case 1- 3  
+
+    def test_check_limits1(self):
+        limits = [18, 24]
+        result = sensors_main.check_limits(limits)
+        self.assertTrue(result, True)
+
+    def test_check_limits2(self):
+        limits = [20, 18]
+        result = sensors_main.check_limits(limits)
+        self.assertTrue(result, False)
+
+    def test_check_limits3(self):
+        limits = [15, 15]
+        result = sensors_main.check_limits(limits)
+        self.assertTrue(result, False) 
+
+    def test_check_limits_2_iterms1(self):
+        limits = [15]
+        result = sensors_main.check_limits_2_iterms(limits)
+        self.assertTrue(result, False) 
+
+    def test_check_limits_2_iterms2(self):
+        limits = [10,12]
+        result = sensors_main.check_limits_2_iterms(limits)
+        self.assertTrue(result, True) 
+
+    ##### for Case 1- 3 
+
+
+
     # Placeholder for the test case test_check_limits_2_iterm1. 
     # To be designed and implemented.
     # The test case test_check_limits_2_iterm1 that tests 
@@ -131,6 +163,59 @@ class TestSensors(unittest.TestCase):
         # test case sets the command line arguments that are in sys.argv)
         # sys.stdout.write(str(mock_print.call_args) + "\n")
         # sys.stdout.write(str(mock_print.call_args_list) + "\n")
+
+    
+    ##### For case 1-3
+
+
+    @patch('builtins.print')
+    def test_check_limits_integration4(self, mock_print):
+        # set command line parameters, since they are where main gets the
+        # min and max temperature settings
+        sys.argv = [["sensors_main.py"], [20], [18]]
+
+        # call main with the command line parameters set up
+        sensors_main.main()
+
+        # check that the console output is the expected error message
+        mock_print.assert_called_with("Error: Incorrect command line arguments.")
+    
+
+    @patch('builtins.print')
+    def test_check_limits_integration5(self, mock_print):
+        # set command line parameters, since they are where main gets the
+        # min and max temperature settings
+        sys.argv = [["sensors_main.py"], [15], [15]]
+
+        # call main with the command line parameters set up
+        sensors_main.main()
+
+        # check that the console output is the expected error message
+        mock_print.assert_called_with("Error: Incorrect command line arguments.")
+
+    @patch('builtins.print')
+    def test_check_limits_integration6(self, mock_print):
+        # set command line parameters, since they are where main gets the
+        # min and max temperature settings
+        sys.argv = [["sensors_main.py"], [18], [24]]
+
+        # call main with the command line parameters set up
+        sensors_main.main()
+
+        # check that the console output is the expected error message
+        mock_print.assert_called_with("Error: Incorrect command line arguments.")
+    @patch('builtins.print')
+    def test_check_limits_integration7(self, mock_print):
+        # set command line parameters, since they are where main gets the
+        # min and max temperature settings
+        sys.argv = [["sensors_main.py"], [18], []]
+
+        # call main with the command line parameters set up
+        sensors_main.main()
+
+        # check that the console output is the expected error message
+        mock_print.assert_called_with("Error: Incorrect command line arguments.")
+    ##### For case 1-3
 
 if __name__ == '__main__':
     unittest.main()
